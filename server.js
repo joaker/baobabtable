@@ -2,6 +2,7 @@ const Twitter = require('twitter');
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
+const port = require('./src/client/constants/port');
 
 const client = new Twitter({
 	consumer_key: 'fx95oKhMHYgytSBmiAqQ',
@@ -135,9 +136,6 @@ app.get('/twitter/tag/search', (req, res) => {
 	);
 });
 
-const defaultProt = 3001;
-const envPort = process && process.env && process.env.PORT;
-const port = envPort || defaultProt;
 app.listen(port, () => {
 	/* eslint-disable no-console */
 	console.log(`listening on port ${port}...`);
