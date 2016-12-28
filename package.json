@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Twitter Screenname Autocomplete Server",
   "scripts": {
-    "start": "node server.js",
+    "start": "webpack && node server.js",
     "dev": "NODE_ENV=development node server.js",
     "mock": "NODE_ENV=development MOCK_PATH=\"/twitter/user/search\" node server.js"
   },
