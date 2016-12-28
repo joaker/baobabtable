@@ -21,28 +21,28 @@ export const setMessage = ({posts=[]}, {post={}}) => {
 };
 
 
-export const setText = (state, action) => {
-  const {value:text=""} = action;
-  return {
-    text,
-  };
-};
-
-export const setToken = (state, action) => {
-  const {value:token="", tokenType} = action;
-  return {
-    token,
-    tokenType,
-  };
-};
-
-export const setCursor = (state, action) => {
-  const {value={}} = action;
-  const {cursorStart = 0} = value;
-  const {cursorEnd = cursorStart} = value;
-
-  return {
-    cursorStart,
-    cursorEnd,
-  };
-};
+// export const setText = (state, action) => {
+//   const {value:text=""} = action;
+//   return {
+//     text,
+//   };
+// };
+//
+// export const setToken = (state, action) => {
+//   const {value:token="", tokenType} = action;
+//   return {
+//     token,
+//     tokenType,
+//   };
+// };
+//
+// export const setCursor = (state, action) => {
+//   const {value={}} = action;
+//   const {cursorStart = 0} = value;
+//   const {cursorEnd = cursorStart} = value;
+//
+//   return {
+//     cursorStart,
+//     cursorEnd,
+//   };
+// };
