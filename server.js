@@ -135,8 +135,11 @@ app.get('/twitter/tag/search', (req, res) => {
 	);
 });
 
-app.listen(3001, () => {
+const defaultProt = 3001;
+const envPort = process && process.env && process.env.PORT;
+const port = envPort || defaultProt;
+app.listen(port, () => {
 	/* eslint-disable no-console */
-	console.log('listening on port 3001...');
+	console.log(`listening on port ${port}...`);
 	/* eslint-enable no-console */
 });
