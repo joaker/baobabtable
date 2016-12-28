@@ -1,7 +1,10 @@
 import * as types from 'constants/action-types';
 import {updateSuggestions} from "actions/suggestion";
 import {symbolToTokenType} from 'constants/patterns';
-export const setText = (value="") => {
+import {maxCharacterCount} from 'constants/search';
+
+export const setText = (rawValue="") => {
+  const value = maxCharacterCount ? rawValue.slice(0,maxCharacterCount) : rawValue;
   return {
     type: types.setText,
     value,

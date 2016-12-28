@@ -1,13 +1,25 @@
-
-
+import './index.scss';
 
 export class CursorInput extends React.PureComponent {
   render(){
     const props = {...this.props};
     delete props.cursorStart; // Remove the cursor, which is only used by component did update
     delete props.cursorEnd; // Remove the cursor, which is only used by component did update
+
+
+    const {maxLength: maxCharacterCount=0, value=""} = props;
+    const characterCount = (maxCharacterCount && value && value.length) || 0;
+    const charactersRemaining = Math.max(maxCharacterCount - characterCount, 0);
+
+    const stateNames = cnames("characters-remaining", { "display-character-limit": maxCharacterCount, "character-limit-reached": !charactersRemaining});
+
     return (
-      <input {...props}/>
+      <div className={cnames("cursor-input", props.className, stateNames)}>
+        <input {...props} className="cursor-inner-inner"/>
+        <div title="Messages are limited to 140 characters" className={cnames("characters-remaining")}>
+          <div>{charactersRemaining} remaining</div>
+        </div>
+      </div>
     );
   }
 

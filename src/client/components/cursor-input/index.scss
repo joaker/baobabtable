@@ -1,0 +1,30 @@
+.cursor-input {
+  position: relative;
+  display:flex;
+  flex-flow:column nowrap;
+  input {
+    width:100%;
+    flex-grow:1;
+  }
+
+  .characters-remaining {
+      font-size: 60%;
+      font-weight: 800;
+      color: rgba(0, 0, 0, 0.5);
+      margin-bottom:.25em;
+      text-align:right;
+      display:none;
+  }
+
+  &.character-limit-reached {
+    .characters-remaining {
+      color: rgba(255, 0, 0, 0.5); // when the character limit has been reached, flag the status as red
+    }
+  }
+
+  &.display-character-limit {
+    .characters-remaining {
+      display:block; // reveal the character limit if one exists
+    }
+  }
+}

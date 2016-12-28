@@ -3,6 +3,7 @@ import {noop, log} from "util/utils";
 import SuggestionList from "./list";
 import MessageInput from "./message-input";
 import styles from "./index.scss";
+import {maxCharacterCount} from 'constants/search';
 
 export const SuggestionInput = ({
   className="",
@@ -50,7 +51,9 @@ export const SuggestionInput = ({
         <MessageInput
           {...inputProps}
         />
-        <a className={cnames("send-button", {disabled: empty})} onClick={() => sendMessage()}>Send</a>
+        <a className={cnames("send-button", "noselect", {disabled: empty})} onClick={() => sendMessage()}>
+          Send
+        </a>
       </div>
       <div className="context-area">
         <SuggestionList {...suggestionProps}/>

@@ -10,15 +10,18 @@ $slow: 800ms;
   width:60vw;
   font-size:24px;
 
+  padding: 1em 1em 0 1em;
+
   .message-box {
     display: flex;
     flex-flow: row nowrap;
+    align-items: flex-start;
   }
 
 
   .send-button {
     cursor:pointer;
-    margin: 1.5em 1em 1.5em .5em;
+    margin-left: 1em;
     padding: .5em .5em;
     border: none;
     background: rgba(0, 0, 0, 0.003);
