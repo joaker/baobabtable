@@ -19,7 +19,7 @@ This user interface is written in React and Redux, in ES2015 transpiled by babel
 The UI starts suggesting screen names fetched from Twitter after the second screen name character (not including the @ character)
 
 - **Debounced screen name resolution**
-
+Each change to the partial screen name triggers a request to resolve associated screen names.  These requests are debounced to provide a smoother UI experience and to limit bandwidth consumption.  One request is sent each time there is a break in rapid typing
 
 - **Keyboard Navigation**
   - Normal Mode (when suggestions ARE NOT displayed):
