@@ -1,0 +1,37 @@
+@import '~styles/colors';
+
+// post example: the #quick #brown @dog jumped over the #lazy #brown @fox
+
+.stream {
+  margin: 0;
+  padding: .5em;
+
+  color: $primary-inactive;
+  .post-item {
+    border: 1px solid $brand-secondary;
+    border-radius: .5em;
+    padding:.5em;
+    margin-bottom: .5em;
+
+    &:hover {
+      color: $primary;
+      border-color: $brand-secondary-inactive;
+      .user, .tag {
+        color: $brand-secondary-inactive;
+        &:hover {
+          color: $brand-secondary-inactive;
+        }
+      }
+    }
+
+    .user, .tag {
+      cursor: pointer;
+      color: $brand-secondary;
+    }
+
+    .tag {
+      font-style: italic;
+    }
+
+  }
+}

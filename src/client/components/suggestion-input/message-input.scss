@@ -1,0 +1,29 @@
+
+@import '~styles/colors';
+
+
+.message-input {
+  flex-grow: 1;
+  margin: 1em 1em;
+  margin-right: 0;
+  padding: 1em 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  box-shadow: inset 0 -2px 0px $secondary-inactive;
+
+  color: $primary-inactive;
+  &::-webkit-input-placeholder {
+  	font-style: italic;
+  	font-weight: 300;
+  	color: $secondary-inactive;
+  }
+  &:focus {
+    color: $primary;
+    box-shadow: inset 0 -2px 0px $secondary;
+    &::-webkit-input-placeholder {
+    	font-style: italic;
+    	font-weight: 300;
+      color: $secondary;
+    }
+  }
+}

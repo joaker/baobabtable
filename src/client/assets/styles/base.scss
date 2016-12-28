@@ -1,0 +1,30 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
+
+ul {
+  list-style: none;
+}
+
+ul,  .content {
+    padding: 1em 1em 1em 2em;
+}
+
+.content {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+a {
+  color:#AAA;
+  font-weight:600;
+
+  &:hover {
+    color:#777;
+  }
+
+  &:not(:hover) {
+    text-decoration: none;
+  }
+}

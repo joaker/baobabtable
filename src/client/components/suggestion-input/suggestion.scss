@@ -1,0 +1,88 @@
+@import '~styles/colors';
+
+@mixin highlight ($speed) {
+  -webkit-transition: color $speed, background-color $speed; /* Safari */
+  transition: color $speed, background-color $speed;
+}
+
+.suggestion {
+  color: $brand-primary-inactive;
+
+  @include highlight(400ms);
+
+  padding:.5em .25em .25em .25em;
+  font-size:18px;
+
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  .avatar-wrapper {
+    min-height: 48px;
+    min-width:48px;
+    height: 48px;
+    width: 48px;
+    background-image: url("/default-square-light.png");
+    .avatar {
+      min-height: 48px;
+      min-width:48px;
+      height: 48px;
+      width: 48px;
+      position:absolute;
+    }
+  }
+
+  .details {
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .name, .handle, .description {
+      cursor: pointer;
+    }
+
+    .title {
+      display: block;
+      font-size: 20px;
+      .name {
+        display: inline-block;
+        color: $secondary;
+        padding:0 1em;
+
+        @include highlight(200ms);
+      }
+
+      .handle {
+        display: inline-block;
+        color: $brand-primary;
+
+        @include highlight(200ms);
+      }
+    }
+  }
+
+  .description {
+    display: block;
+    color: $secondary-inactive;
+    padding:0 1em;
+
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+
+  &:active, &:hover, &.selected {
+    color:white;
+    background-color: $brand-primary-inactive;
+    .title {
+      .name {
+        color: white;
+      }
+
+      .handle {
+        color: white;
+      }
+    }
+  }
+}
