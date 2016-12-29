@@ -1,3 +1,4 @@
+@import "~styles/colors";
 
   html, body {
     height: 100%;
@@ -40,6 +41,8 @@
         padding: 1em 0 .25em 0;
         text-align: center;
         color: rgba(29, 161, 242, .75);
+        color: rgba(89, 203, 89, 1);
+        color: $brand-primary;
         -webkit-text-rendering: optimizeLegibility;
         -moz-text-rendering: optimizeLegibility;
         text-rendering: optimizeLegibility;

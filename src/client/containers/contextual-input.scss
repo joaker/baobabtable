@@ -8,25 +8,25 @@
 
   color: $primary-inactive;
   .post-item {
-    border: 1px solid $brand-secondary;
+    border: 1px solid $brand-primary-inactive;
     border-radius: .5em;
     padding:.5em;
     margin-bottom: .5em;
 
     &:hover {
       color: $primary;
-      border-color: $brand-secondary-inactive;
+      border-color: $brand-secondary;
       .user, .tag {
-        color: $brand-secondary-inactive;
+        color: $brand-secondary;
         &:hover {
-          color: $brand-secondary-inactive;
+          color: $brand-primary;
         }
       }
     }
 
     .user, .tag {
       cursor: pointer;
-      color: $brand-secondary;
+      color: $brand-secondary-inactive;
     }
 
     .tag {
