@@ -1,5 +1,11 @@
 # Twitter Compose
 
+## Demo
+
+Check out the demo [here](https://tweetify-composer.herokuapp.com/)
+
+Note: The first request to heroku after a while of activity takes between 2 and 10 seconds to complete.  Subsequent requests will be quicker
+
 ## Description
 
 Compose a tweet with auto-complete for screen names (e.g.: @davidd => @daviddavidson)
