@@ -12,9 +12,14 @@
   }
 
 
-  input {
+  input, textarea {
+    resize: none;
+    flex-shrink: 1;
+    box-sizing: border-box;
     border: none;
+    border-width:0;
     padding: 0.5em 0;
+    // padding: .5em 0 0 0;
     background: rgba(0, 0, 0, 0.003);
     box-shadow: inset 0 -2px 0px $secondary-inactive;
     box-shadow: inset 0 -2px 0px $brand-primary-inactive;

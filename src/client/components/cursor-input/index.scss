@@ -2,7 +2,7 @@
   position: relative;
   display:flex;
   flex-flow:column nowrap;
-  input {
+  input, text-area {
     width:100%;
     flex-grow:1;
   }
