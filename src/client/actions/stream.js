@@ -1,6 +1,7 @@
 import * as types from 'constants/action-types';
 import uuid from 'uuid';
 import * as messageActions from './message';
+import {clearSuggestions} from './suggestion';
 
 const getTimestamp = (d = new Date()) => d.getTime();
 
@@ -28,6 +29,7 @@ export const sendMessage = () => {
     dispatch(messageActions.setText(""));
     dispatch(messageActions.setToken(""));
     dispatch(messageActions.setCursor(0,0));
+    dispatch(clearSuggestions()); // clear the suggestions queue, in case of races
 
     dispatch(addMessage(message, id)); // optimistically add the message
     const payload = {

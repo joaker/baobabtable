@@ -6,7 +6,8 @@
   margin: 0;
   padding: .5em;
 
-  color: $primary-inactive;
+  color: $brand-primary-inactive;
+  color: rgba($brand-primary, .75);
   .post-item {
     border: 1px solid $brand-primary-inactive;
     border-radius: .5em;
@@ -15,6 +16,7 @@
 
     &:hover {
       color: $primary;
+      color: $brand-primary;
       border-color: $brand-secondary;
       .user, .tag {
         color: $brand-secondary;
