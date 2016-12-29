@@ -15,14 +15,16 @@
   input, textarea {
     resize: none;
     flex-shrink: 1;
-    box-sizing: border-box;
+    box-sizing: content-box;
     border: none;
     border-width:0;
     padding: 0.5em 0;
-    // padding: .5em 0 0 0;
+    outline-offset: none;
     background: rgba(0, 0, 0, 0.003);
-    box-shadow: inset 0 -2px 0px $secondary-inactive;
+
     box-shadow: inset 0 -2px 0px $brand-primary-inactive;
+    box-shadow: inset 0 0 0 black;
+    border-bottom: 2px solid $brand-primary-inactive;
 
     color: $primary-inactive;
     color: $brand-primary-inactive;
@@ -37,8 +39,9 @@
     &:focus, &:hover {
       color: $primary;
       color: $brand-primary;
-      box-shadow: inset 0 -2px 0px $secondary;
       box-shadow: inset 0 -2px 0px $brand-secondary;
+      box-shadow: inset 0 0 0 black;
+      border-bottom: 2px solid $brand-secondary;
       &::-webkit-input-placeholder {
       	font-style: italic;
       	font-weight: 300;
@@ -47,4 +50,4 @@
       }
     }
   }
-}
+}  // a b c e d e f g h i j k l m n o p q r s t u v w x y z

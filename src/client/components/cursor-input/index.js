@@ -1,5 +1,6 @@
 import './index.scss';
 import {onResize} from "on-resize/react";
+import resize from './resize';
 
 // A text component that accepts the cursor start and end locations
 // By default, will draw focus after mounting
@@ -77,11 +78,55 @@ const isCursorIndex = index => index>=0;
 // A fake target element
 const dummyTarget = {style: { height: 0, scrollHeight: 0}};
 
+const extractNumber = (token="") => {
+  const numberStrings = token.match( /\d+/g);
+  if(!numberStrings) return 0;
+
+  const numbers = numberStrings.map(parseInt);
+  const first = numbers.slice(0,1)[0];
+  const result = first || 0;
+  return result;
+}
+
+const getComputedStyles = elem => prop => {
+  const result = window.getComputedStyle(elem, null).getPropertyValue(prop);
+  return result;
+};
+
+const createGetValue = computedStyles => (...parts) => {
+  const fullName = parts.join('-');
+  const val = computedStyles(fullName);
+  return val;
+};
+
+const getVerticalTotal = (element, properties=[]) => {
+  if(!element) return 0;
+
+  const styles = getComputedStyles(element);
+  const getValue = createGetValue(styles);
+
+  const vtotal = verticals.reduce((memo, property) => {
+    const topString = getValue(property, 'top');
+    const bottomString = getValue(property, 'bottom');
+
+    const top = extractNumber(topString);
+    const bottom = extractNumber(bottomString);
+
+    const vertical = top + bottom;
+    return memo + vertical;
+  }, 0);
+
+  return vtotal;
+};
+
+const verticals = [
+  'padding',
+];
+
 // Adjustor factory
 const createAdjustor = (next = e => e) => (e={}) => {
   const { target = dummyTarget } = e;
-  target.style.height = 0;
-  target.style.height = `${target.scrollHeight}px`;
+  resize(target,verticals);
   next(e);
 };
 
