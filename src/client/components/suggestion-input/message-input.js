@@ -45,7 +45,7 @@ export const MessageInput = ({
             const actionMap = {
               [keys.up]: whenSuggesting(previousSuggestion),
               [keys.down]: whenSuggesting(nextSuggestion),
-              [keys.enter]: e => e.shiftKey ? onEnter(e) : e,
+              [keys.enter]: e => e.shiftKey ? false : onEnter(e),
               [keys.escape]: whenSuggesting(clearSuggestions),
             };
             const key = e.which;
