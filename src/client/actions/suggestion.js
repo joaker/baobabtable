@@ -77,7 +77,7 @@ export const updateSuggestionIndex = (suggestedIndex) => {
 
     const mod = Math.min(maxSuggestionCount, itemCount);
 
-    const nextIndex = suggestedIndex % mod;
+    const nextIndex = (maxSuggestionCount + suggestedIndex) % mod;
     return dispatch(setSuggestionIndex(nextIndex));
   };
 }
@@ -89,7 +89,7 @@ const getSuggestionIndex = (getState) => {
   return suggestionIndex;
 }
 
-export const previousSuggestion = () => {
+export const previousSuggestion = (e) => {
   return (dispatch, getState) => {
     const suggestionIndex = getSuggestionIndex(getState);
     return dispatch(updateSuggestionIndex(suggestionIndex - 1));

@@ -28,6 +28,11 @@ export const MessageInput = ({
     cursorEnd,
   };
 
+  const whenSuggesting = fn => {
+    if(hasSuggestions){
+      return fn;
+    }
+  };
 
   return (
       <CursorInput
@@ -38,10 +43,10 @@ export const MessageInput = ({
         {...messageInputProps}
         onKeyDown={(e) => {
             const actionMap = {
-              [keys.up]: previousSuggestion,
-              [keys.down]: nextSuggestion,
-              [keys.enter]: onEnter,
-              [keys.escape]: clearSuggestions,
+              [keys.up]: whenSuggesting(previousSuggestion),
+              [keys.down]: whenSuggesting(nextSuggestion),
+              [keys.enter]: e => e.shiftKey ? onEnter(e) : e,
+              [keys.escape]: whenSuggesting(clearSuggestions),
             };
             const key = e.which;
             const fn = actionMap[key];
