@@ -27,6 +27,7 @@ section.section {
   flex-flow: column nowrap;
   align-items: stretch;
   justify-content: space-around;
+  justify-content: flex-start;
 
   .section-scroll-area {
     min-height: 100%;

@@ -24,8 +24,9 @@ render(
 		<Router history={history}>
 	    <Route path="/" component={App}>
 				<IndexRoute component={pages.Welcome}/>
-				<Route path="/Welcome" component={pages.Welcome}/>				
+				<Route path="/Welcome" component={pages.Welcome}/>
 				<Route path="/Menu" component={pages.Menu}/>
+				<Route path="/Gallery" component={pages.Gallery}/>
 	      <Route path="/Stuff" component={pages.Stuff}/>
 				<Route path="/Thangs" component={pages.Thangs}/>
 			</Route>
