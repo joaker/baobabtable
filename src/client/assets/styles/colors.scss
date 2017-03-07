@@ -12,3 +12,16 @@ $brand-secondary: rgba(14, 176, 76, 1);
 $brand-secondary-inactive: rgba(14, 176, 76, 0.75);
 
 $field: rgba(71, 118, 89, 0.013);
+
+$theme-color: rgb(214,186,147);
+$theme-color-light: lighten($theme-color, 40%);
+$theme-color-dark: darken($theme-color, 40%);
+
+$theme-fore: rgba($theme-color-dark, 0.9);
+$theme-fore-secondary: rgba($theme-fore, 0.8);
+
+$theme-back: rgba($theme-color-light, 0.8);
+$theme-back: rgba($theme-back, 0.7);
+
+$text-color: rgba(hsl(35, 10,10), 0.9);
+$secondary-color: rgba($text-color, 0.6);

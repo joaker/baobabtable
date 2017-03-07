@@ -1,0 +1,54 @@
+#marquee {
+    // height: 452px;
+    background: transparent url(/img/blue-tangerine.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+
+
+    .nope {
+      .section-content {
+        background-color: rgba(255,255,255, .6);
+        background-color: rgba(0,0,0, .4);
+      }
+
+      h1 {
+        font-size: 600%;
+        line-height:1.5em;
+        color: white;
+      }
+      h3 {
+
+        font-size: 150%;
+        color:white;
+      }
+    }
+
+    h1 {
+      font-size: 600%;
+      line-height:1.5em;
+      color: rgba(0,0,0, .7);
+    }
+    h3 {
+      font-size: 150%;
+      color: rgba(0,0,0, .7);
+    }
+
+
+}
+
+
+
+
+.mobileOnly {
+	display: none !important;
+}
+
+@media only screen and (max-width: 767px) {
+	.noMobile {
+		display: none !important;
+	}
+
+	.mobileOnly {
+		display: block !important;
+	}
+}

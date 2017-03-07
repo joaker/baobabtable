@@ -1,12 +1,15 @@
-import ContextualInput from "../contextual-input";
+import './index.scss';
+import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'react-router';
+import Nav from 'components/Nav';
 
-const titleName = 'Tweetify';
-const title = titleName.split('').join(' ');
-export const App = () => (
-  <ul className="app-component">
-    <li><h1 className="noselect">{title}</h1></li>
-    <li><ContextualInput/></li>
-  </ul>
+export const App = ({children}) => (
+  <div>
+    <Nav/>
+    <div className='contents'>
+      <main>
+      {children}
+      </main>
+    </div>
+  </div>
 );
-
 export default App;

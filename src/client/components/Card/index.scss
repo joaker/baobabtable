@@ -1,0 +1,8 @@
+@import "~styles/colors.scss";
+
+.card {
+  background-color: rgba(255, 255, 255, 0.80);
+  margin: .5em 0em;
+  padding: .5em 2em;
+  flex-grow: 1;
+}

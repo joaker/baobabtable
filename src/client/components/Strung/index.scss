@@ -1,0 +1,21 @@
+.inherit {
+  font-size: inherit;
+  line-height: 1.5em;
+}
+
+.strung {
+  @extend .inherit;
+  display:block;
+
+
+  div { /* .strung-content */
+    @extend .inherit;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    div { /* letter */
+      @extend .inherit;
+      display: inline-block;
+    }
+  }
+}

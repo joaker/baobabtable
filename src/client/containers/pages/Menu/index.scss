@@ -1,0 +1,21 @@
+#menu {
+    // height: 452px;
+    background: transparent url(/img/puffPuff.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+
+.mobileOnly {
+	display: none !important;
+}
+
+@media only screen and (max-width: 767px) {
+	.noMobile {
+		display: none !important;
+	}
+
+	.mobileOnly {
+		display: block !important;
+	}
+}
