@@ -1107,9 +1107,11 @@ main {
 }
 @media screen and (max-width: 768px) {
   main {
-    margin-top: 450px;
+    // margin-top: 450px;
+    // margin-top: 0;
   }
 }
+
 section.footer {
   padding-top: 0;
   position: relative;

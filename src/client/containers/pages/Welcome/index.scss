@@ -52,3 +52,15 @@
 		display: block !important;
 	}
 }
+
+
+@media screen and (max-width: 768px) {
+  #marquee {
+    h1 {
+      font-size: 400%;
+    }
+    h3 {
+      font-size: 100%;
+    }
+  }
+}
