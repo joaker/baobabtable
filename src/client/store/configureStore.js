@@ -7,7 +7,10 @@ import reducer from 'reducers'
 
 const compose = (isDevelopment && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || plainCompose;
 
-const configureStore = (preloadedState={}) => {
+const defaultState = {
+  location: { locations: [], },
+};
+const configureStore = (preloadedState=defaultState) => {
   const store = createStore(
     reducer,
     preloadedState,

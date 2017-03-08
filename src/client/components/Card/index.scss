@@ -5,4 +5,13 @@
   margin: .5em 0em;
   padding: .5em 2em;
   flex-grow: 1;
+
+  &.full {
+    position: absolute;
+    margin:0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }

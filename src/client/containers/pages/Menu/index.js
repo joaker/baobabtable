@@ -1,19 +1,24 @@
 import './index.scss';
 import Section from 'components/Section';
 import Card from 'components/Card';
+import PageLink from 'components/PageLink';
 
-export const Menu = () => (
+const fixed = false;
+const hidden = false;
+
+export const Menu = ({className}) => (
 			<Section id="menu">
-				<Card>
-				<blockquote>
-					<p>When a ripe fruit sees an honest man, it drops</p>
-          <cite>Nigerian Proverb</cite>
-				</blockquote>
-				</Card>
-				<Card>
-					<p>With an emphasis on sourcing from local farms and cuisine highlighted by seasonal <br/>ingredients, Executive Chef/Partner <a href="giuseppe-tentori.html">Giuseppe Tentori</a> has curated a meat-centric menu <br/>indicative of his signature sharable plates at sister restaurant, <a href="http://www.gtoyster.com" target="_blank">GT Fish &amp; Oyster</a>.</p>
-					<p>Indulge. Imbibe. Explore.</p>
-					<p><a href="giuseppe-tentori.html">Giuseppe Tentori</a></p>
+				<Card full={true}>
+				  <nav id={"menu-card"} data-view-className="views/Navigation" className={cnames("navigation","mobileOnly", "column", className, {fixed, hidden,})}>
+				    <div className="container hashRoute">
+				      <PageLink name="Welcome"/>
+				      <PageLink name="Intro"/>
+				      <PageLink name="Gallery"/>
+				      <PageLink name="Reservations"/>
+				      <PageLink name="Contact"/>
+				      <PageLink name="@AbujaChef"/>
+				    </div>
+				  </nav>
 				</Card>
 			</Section>
 );

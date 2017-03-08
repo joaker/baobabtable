@@ -1,3 +1,3 @@
 import './index.scss';
-export const Card = ({children}) => <div className="card">{children}</div>;
+export const Card = ({className="", children, full=false}) => <div className={cnames("card", className, {full,})}>{children}</div>;
 export default Card;

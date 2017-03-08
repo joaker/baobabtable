@@ -8,16 +8,24 @@ import * as pages from 'pages';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import configureStore from "./store/configureStore";
+import {updateLocation} from 'actions/location';
 
 // import { Router, Route, browserHistory } from 'react-router';
 import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
+const unsyncedHistory = browserHistory;
+
+
 // build a store
 const store = configureStore();
 
+
 // Create an enhanced history that syncs navigation events with the store
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(unsyncedHistory, store)
+
+unsyncedHistory.listen(updateLocation(store));
+
 
 render(
 	<Provider store={store}>

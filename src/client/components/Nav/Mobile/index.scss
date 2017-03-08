@@ -1,0 +1,169 @@
+
+$time: .3s;
+$time: 350ms;
+$time: 250ms;
+
+
+$size: 6vw;
+$thick: 1vw;
+$centerOffset: $thick * 1.4;
+$edgeOffset: 1.2vw;
+
+.navigation.mobileOnly {
+	cursor: pointer;
+	height: $size;
+  font-size: $size;
+  line-height: $size;
+	left: $edgeOffset;
+	position: absolute;
+	top: $edgeOffset;
+	width: $size;
+	z-index: 101;
+
+  padding: 0; // clear padding from main nav
+  background-color:transparent;
+  border: none;
+}
+
+
+.navigation.mobileOnly:before,
+.navigation.mobileOnly:after {
+	background-color: #fff;
+  background-color: rgba(#fff, .8);
+	content: ' ';
+	height: $thick;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	-webkit-transition: all $time ease-in-out;
+	-moz-transition: all $time ease-in-out;
+	//-o-transition: all $time ease-in-out;
+	transition: all $time ease-in-out;
+}
+
+.navigation.mobileOnly:before {
+	margin-top: -6px;
+  margin-top: -$centerOffset;
+}
+
+.navigation.mobileOnly:after {
+	margin-top: 2px;
+  margin-top: $centerOffset;
+}
+
+.navigation.mobileOnly.open:before, .navigation.mobileOnly.open:after {
+    margin-top: $thick*2;
+    margin-top: -2px;
+    background-color: rgba(#000, .8);
+}
+
+.navigation.mobileOnly.open:before, .navigation.mobileOnly.open:after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    // -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.navigation.mobileOnly.open:after {
+    margin-top: -2px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    // -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.mobile-nav nav.closed {
+  display:none !important;
+}
+
+$edge: 8vw;
+nav.navigation.mobileOnly.modal.open {
+  position: fixed;
+  top: $edge;
+  bottom: $edge;
+  left: $edge;
+  right: $edge;
+
+  background-color: rgba(255, 255, 255, 0.80);
+
+  &::after, &::before{
+    display:none;
+  }
+
+}
+
+
+
+
+
+// wide angle
+
+@media screen and (min-aspect-ratio: 1/1) {
+  $size: 6vh;
+  $thick: 1vh;
+  $centerOffset: $thick * 1.4;
+  $edgeOffset: 1.2vh;
+
+
+
+  .navigation.mobileOnly {
+  	height: $size;
+    font-size: $size;
+    line-height: $size;
+  	left: $edgeOffset;
+  	top: $edgeOffset;
+  	width: $size;
+  }
+
+
+  .navigation.mobileOnly:before,
+  .navigation.mobileOnly:after {
+  	height: $thick;
+  	-webkit-transition: all $time ease-in-out;
+  	-moz-transition: all $time ease-in-out;
+  	//-o-transition: all $time ease-in-out;
+  	transition: all $time ease-in-out;
+  }
+
+  .navigation.mobileOnly:before {
+    margin-top: -$centerOffset;
+  }
+  .navigation.mobileOnly:after {
+    margin-top: $centerOffset;
+  }
+
+  .navigation.mobileOnly.open:before, .navigation.mobileOnly.open:after {
+  }
+
+  .navigation.mobileOnly.open:before, .navigation.mobileOnly.open:after {
+  }
+
+  .navigation.mobileOnly.open:after {
+  }
+
+
+}
+
+.mobile-nav nav.closed {
+  display:none;
+}
+
+  $edgew: 8vw;
+  $edgeh: 8vh;
+  nav.navigation.mobileOnly.modal.open {
+    position: fixed;
+    top: $edgeh;
+    bottom: $edgeh;
+    left: $edgew;
+    right: $edgew;
+
+    background-color: rgba(255, 255, 255, 0.80);
+
+    &::after, &::before{
+      display:none;
+    }
+
+  }

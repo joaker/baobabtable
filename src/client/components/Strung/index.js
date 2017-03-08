@@ -1,6 +1,6 @@
 import "./index.scss";
 
-export const Letter = ({value=''}) => (<div>{value}</div>)
+export const Letter = ({value=''}) => (<div className="">{value}</div>)
 
 export const Strung = (parentProps) => {
   const props = {...parentProps};
@@ -8,11 +8,14 @@ export const Strung = (parentProps) => {
   delete props.value;
 
   const chars = value.split("");
-  const letters = chars.map((char, i) => <Letter key={`${i}${char}`} value={char}/>)
+
+  const words = value.split(/\w/)
+
+  const letters = chars.map((char, i) => <Letter key={`${i}${char}`} value={char} className="noselect"/>)
 
   return (
-    <div {...props} className={cnames("strung", className)}>
-      <div className="strung-content">
+    <div {...props} className={cnames("strung", "", className)}>
+      <div className="strung-content noselect">
         {letters}
       </div>
     </div>

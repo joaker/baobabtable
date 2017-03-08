@@ -1,0 +1,59 @@
+$size: 4vw;
+$thick: $size/10;
+$centerOffset: $thick * 2;
+
+$splash: rgba(255,255,255, .21);
+$menu-back: rgba(0,0,0, .84);
+$menu-text: rgba(255,255,255, .84);
+
+$splash: rgba(0,0,0, .42);
+$menu-back: rgba(255,255,255, .84);
+$menu-text: rgba(0,0,0, .84);
+
+
+$edge: 8vw;
+$edge: 0;
+
+.fullscreen {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+$fsize: 8.4vw;
+.modal {
+  display:none;
+
+	&.open {
+		@extend .fullscreen;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: stretch;
+		justify-content: space-around;
+
+		background-color: $splash;
+		.routes {
+			display: flex;
+			flex-flow: column nowrap;
+			flex-grow:1;
+			align-items: center;
+			justify-content:space-between;
+
+			background-color: $menu-back;
+			color: $menu-text;
+			margin: $edge;
+			padding: 10vw;
+
+			&> a {
+				font-size:$fsize;
+				line-height: $fsize * 1.4;
+				&.nav:hover:after {
+					transform: translateY(-7px);
+				}
+			}
+		}
+	}
+}

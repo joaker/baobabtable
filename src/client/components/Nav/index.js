@@ -6,7 +6,7 @@ export const Nav = ({id, className, hidden= false, fixed= true}) => (
   <nav id={id} data-view-className="views/Navigation" className={cnames("navigation", className, {fixed, hidden,})}>
     <div className="container hashRoute">
       <PageLink name="Welcome"/>
-      <PageLink name="Menu"/>
+      <PageLink name="Intro"/>
       <PageLink name="Gallery"/>
       <PageLink name="Reservations"/>
       <PageLink name="Contact"/>

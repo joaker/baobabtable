@@ -7,3 +7,6 @@ export const sendMessage = 'POST_MESSAGE';
 export const addMessage = "ADD_MESSAGE";
 export const removeMessage = "REMOVE_MESSAGE";
 export const setMessage = "SET_MESSAGE";
+export const changeLocation = "CHANGE_LOCATION";
+export const updateLocation = "UPDATE_LOCATION";
+export const setMenu = "SET_MENU";
