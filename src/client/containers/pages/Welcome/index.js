@@ -6,19 +6,10 @@ import Strung from 'components/Strung';
 export const Welcome = () => (
 			<Section id="marquee" className="full-height">
 				<Card>
-        <h1 className="noselect"><Strung value="BaobabTable"/></h1>
-        <h3 className="noselect"><Strung value="cooking dreams - serving memories"/></h3>
+	        <h1 className="noselect"><Strung value="BaobabTable"/></h1>
+	        <h3 className="noselect"><Strung value="cooking dreams - serving memories"/></h3>
 				</Card>
-				{
-          " " || <p><a href="https://goo.gl/maps/as4PKRZ2dNE2" target="_blank" className="fade">707 N Wells Street &nbsp;|&nbsp; Chicago, IL 60654</a></p>
-        }
-				{" " || <div className="credits-wrapper">
-					<a href="http://www.bokagrp.com" target="_blank" className="brg-logo">
-						<div className="brg-symbol"></div>
-						<div className="brg-logotype"></div>
-					</a>
-					<a href="http://www.gripdesign.com" target="_blank" className="grip-link">Site By Grip</a>
-				</div>}
+}
 			</Section>);
 
 // const unused = (

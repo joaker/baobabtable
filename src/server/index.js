@@ -1,7 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
-const port = require('./src/client/constants/port');
+const port = require('../client/constants/port');
+const routes = require('./routes');
+const path = require('path');
+const join = path.join;
+
+const rootDir = join(__dirname, '..', '..');
+const distDir = join(rootDir, 'dist');
+
 
 //CORS support
 var allowCrossDomain = function(req, res, next) {
@@ -16,7 +23,7 @@ function installWebpackDevServer() {
 
   // Step 1: Create & configure a webpack compiler
   var webpack = require('webpack');
-  var webpackConfig = require(process.env.WEBPACK_CONFIG ? process.env.WEBPACK_CONFIG : './webpack.config');
+  var webpackConfig = require(process.env.WEBPACK_CONFIG ? process.env.WEBPACK_CONFIG : '../../webpack.config');
   var compiler = webpack(webpackConfig);
 
   // Step 2: Attach the dev middleware to the compiler & the server
@@ -30,28 +37,19 @@ function installWebpackDevServer() {
   }));
 }
 
-const mapCode = (error) => {
-
-}
 
 
 if(process.env.NODE_ENV !== "production"){
 	installWebpackDevServer();
 }
 
-app.use('/', express.static('dist'));
+app.use(routes);
 
-// app.get('/', (req, res) => {
-// 	res.status(200).send({
-// 		data: 'Successful request',
-// 	});
-// });
-
-// parse application/x-www-form-urlencoded
+app.use('/', express.static(distDir));
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// parse application/json
-app.use(bodyParser.json())
+
+app.use(bodyParser.json()); // parse application/json
 
 
 const mappedCodes = {
@@ -59,19 +57,12 @@ const mappedCodes = {
 	default: 500,
 };
 
-// app.route('/me').get(function(req, res){
-//
-// res.sendFile(__dirname+'/public/html/contacts.html')
-//
-//
-// })
 
 app.use(function(req, res, next){
   if (req.accepts('html')) {
-    res.sendFile(__dirname+'/dist/index.html');
+    res.sendFile(join(distDir, 'index.html'));
     return;
   }
-
 });
 
 
