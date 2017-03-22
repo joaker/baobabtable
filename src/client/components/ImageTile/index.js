@@ -12,10 +12,14 @@ export const ImageTile = (props) => {
     ...defaults,
     ...props,
   };
-  const {href, src, className="", caption} = defaultedProps;
-
+  const {href, src, className="", caption, onClick: selector} = defaultedProps;
   return (
-    <a href={href} className="image-tile">
+    <a href={src} className="image-tile" onClick={e => {
+      if(selector){
+        selector(src);
+        e.preventDefault(); // skip the href
+      }
+    }}>
       <div className="image-tile-contents">
         <img src={src}/>
         <div className="browser-caption">{caption}</div>

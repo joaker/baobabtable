@@ -6,6 +6,7 @@ import suggestion from "reducers/suggestion";
 import stream from "reducers/stream";
 import location from "reducers/location";
 import menu from "reducers/menu";
+import gallery from "reducers/gallery";
 
 export default combineReducers({
   message,
@@ -14,4 +15,5 @@ export default combineReducers({
   routing,
   location,
   menu,
+  gallery,
 });

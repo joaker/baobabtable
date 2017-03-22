@@ -10,3 +10,5 @@ export const setMessage = "SET_MESSAGE";
 export const changeLocation = "CHANGE_LOCATION";
 export const updateLocation = "UPDATE_LOCATION";
 export const setMenu = "SET_MENU";
+export const setTiles = "SET_TILES";
+export const selectTile = "SELECT_TILE";

@@ -31,7 +31,7 @@ a.image-tile, a.image-tile:hover, a.image-tile:visited {
 
 @media screen and (min-aspect-ratio: 1/1) {
   .image-tile, .box {
-  	width: 30%;		/* desired width */
+  	width: 24%;		/* desired width */
     font-size: $text-size;
     line-height: $text-size;
     margin-bottom: $margin-bottom;
@@ -39,6 +39,11 @@ a.image-tile, a.image-tile:hover, a.image-tile:visited {
     .browser-caption {
     }
   }
+
+	.selected-tile .image-tile, .box {
+		width: 90%;		/* desired width */
+	}
+
 }
 
 

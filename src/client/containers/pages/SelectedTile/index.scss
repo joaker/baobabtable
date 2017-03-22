@@ -1,0 +1,33 @@
+#gallery {
+    // height: 452px;
+    background: transparent url(/img/toasts.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+
+    .card {
+      text-align: center;
+      padding: 3vw;
+      margin: 2vw;
+      
+      .tiles {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+      }
+    }
+}
+
+
+.mobileOnly {
+	display: none !important;
+}
+
+@media only screen and (max-width: 767px) {
+	.noMobile {
+		display: none !important;
+	}
+
+	.mobileOnly {
+		display: block !important;
+	}
+}
