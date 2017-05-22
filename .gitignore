@@ -2,3 +2,4 @@ node_modules
 .DS_Store
 dist/assets
 .secrets
+npm-debug.log

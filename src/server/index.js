@@ -49,7 +49,6 @@ app.use('/', express.static(distDir));
 app.use(bodyParser.urlencoded({ extended: false }))
 
 
-app.use(bodyParser.json()); // parse application/json
 
 
 const mappedCodes = {

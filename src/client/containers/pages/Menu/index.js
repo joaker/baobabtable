@@ -14,7 +14,7 @@ export const Menu = ({className}) => (
 				      <PageLink name="Welcome"/>
 				      <PageLink name="Intro"/>
 				      <PageLink name="Gallery"/>
-				      <PageLink name="Reservations"/>
+				      <PageLink name="Join"/>
 				      <PageLink name="Contact"/>
 				      <PageLink name="@AbujaChef"/>
 				    </div>

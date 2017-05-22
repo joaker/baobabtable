@@ -35,6 +35,7 @@ render(
 				<Route path="/Welcome" component={pages.Welcome}/>
 				<Route path="/Intro" component={pages.Intro}/>
 				<Route path="/Gallery" component={pages.Gallery}/>
+				<Route path="/Join" component={pages.Join}/>
 	      <Route path="/Stuff" component={pages.Stuff}/>
 				<Route path="/Thangs" component={pages.Thangs}/>
 			</Route>

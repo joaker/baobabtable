@@ -8,7 +8,7 @@ export const Nav = ({id, className, hidden= false, fixed= true}) => (
       <PageLink name="Welcome"/>
       <PageLink name="Intro"/>
       <PageLink name="Gallery"/>
-      <PageLink name="Reservations"/>
+      <PageLink name="Join"/>
       <PageLink name="Contact"/>
       <PageLink name="@AbujaChef"/>
     </div>
