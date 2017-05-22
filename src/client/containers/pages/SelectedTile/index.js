@@ -10,9 +10,9 @@ const generateTile = (sources) => {
 	const tiles = [];
 	for(let i = 0; i < 10; i++){
 		const srcIndex = i % sources.length;
-		const src = sources[srcIndex];
-		console.log(`sourcing: ${src}`);
-		tiles.push(<ImageTile href="/Menu" src={src} key={i}/>);
+		const {url, description} = src || {};
+		console.log(`sourcing: ${url}`);
+		tiles.push(<ImageTile href="/Menu" src={url} caption={description} key={i}/>);
 	}
 	return tiles;
 }

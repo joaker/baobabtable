@@ -1737,10 +1737,15 @@ i {
     background-position: 0 -649px;
   }
 }
+$quickSpeed: .1s;
 .button-base a {
   color: #151517;
   color: #848488;
+  transition: color $quickSpeed;
+
 }
+
+
 .button-base, a {
   font-family: "RomanaBT-Bold", Helvetica, sans-serif;
   font-weight: normal;

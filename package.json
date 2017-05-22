@@ -4,7 +4,7 @@
   "description": "cooking dreams and serving memories",
   "scripts": {
     "start": "./node_modules/.bin/webpack && node src/server",
-    "dev": "NODE_ENV=development node src/server",
+    "dev": "NODE_ENV=development node --inspect src/server",
     "mock": "NODE_ENV=development MOCK_PATH=\"/twitter/user/search\" node src/server",
     "test": "./node_modules/.bin/mocha --compilers js:babel-register --recursive"
   },

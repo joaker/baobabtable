@@ -1,6 +1,6 @@
 #gallery {
     // height: 452px;
-    background: transparent url(/img/toasts.jpg) no-repeat center center;
+    background: transparent url(/img/wood_large.png) no-repeat center center;
     background-size: cover;
     position: relative;
 
@@ -8,7 +8,7 @@
       text-align: center;
       padding: 3vw;
       margin: 2vw;
-      
+
       .tiles {
         display: flex;
         flex-flow: row wrap;

@@ -11,7 +11,7 @@ $margin: 1em;
 $text-size: 1em;
 $margin-bottom:  $text-size*3;
 
-
+$baseSpeed: .3s;
 
 .image-tile, .box {
 	position: relative;
@@ -20,8 +20,38 @@ $margin-bottom:  $text-size*3;
   line-height: $text-size;
   margin-bottom: $margin-bottom;
 
+	&:before, &:after {
+		/* clear the background for anchors */
+		background: none;
+		bottom: 0;
+	}
+
   .browser-caption {
+		display:flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		font-weight:600;
+		overflow: hidden;
+  	text-overflow: ellipsis;
+
+		/* transitioned properties */
+		height:2em;
+		background-color: rgba(255,255,255,.7);
+		justify-content: flex-start;
+
+		/* transitions*/
+		-webkit-transition: height $baseSpeed, background-color $baseSpeed, font-weight $baseSpeed, justify-content $baseSpeed; /* Safari */
+	  transition: height $baseSpeed, background-color $baseSpeed, font-weight $baseSpeed, justify-content $baseSpeed;
+
   }
+
+	&:hover {
+		.browser-caption {
+			height:100%;
+			background-color: rgba(255,255,255,.6);
+			justify-content: center;
+		}
+	}
 }
 
 a.image-tile, a.image-tile:hover, a.image-tile:visited {
@@ -31,10 +61,11 @@ a.image-tile, a.image-tile:hover, a.image-tile:visited {
 
 @media screen and (min-aspect-ratio: 1/1) {
   .image-tile, .box {
-  	width: 24%;		/* desired width */
+  	width: 33.33%;		/* desired width */
     font-size: $text-size;
     line-height: $text-size;
     margin-bottom: $margin-bottom;
+		margin-bottom:0;
 
     .browser-caption {
     }
@@ -42,6 +73,12 @@ a.image-tile, a.image-tile:hover, a.image-tile:visited {
 
 	.selected-tile .image-tile, .box {
 		width: 90%;		/* desired width */
+	}
+
+	.selected-tile {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
 	}
 
 }
@@ -52,10 +89,48 @@ $height: $dim + $margin + $margin-bottom;
 .image-tile, .box {
   .image-tile-contents {
     display: flex;
+		display: block;
     flex-flow: column nowrap;
-    .browser-caption {
 
+		background-image: url("/fallback-image.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		&> *:first-child {
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+		}
+
+		&> *:last-child {
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: flex-end;
+		}
+
+		img {
+			height: 100%;
+		}
+
+    .browser-caption {
+			display: flex;
+			flex-flow: column nowrap;
+			// background-image: url(/fallback-image.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			align-items: center;
     }
+		a:hover .background-caption {
+			background-color: argb(0,50,50,50, 20);
+		}
   }
 }
 

@@ -20,8 +20,9 @@ const generateTile = (sources, action) => {
 	for(let i = 0; i < tileCount; i++){
 		const srcIndex = i % sources.length;
 		const src = sources[srcIndex];
-		console.log(`sourcing: ${src}`);
-		tiles.push(<ImageTile src={src} key={i} index={i} onClick={action}/>);
+		const {url, description} = src || {};
+		console.log(`sourcing: ${url}`);
+		tiles.push(<ImageTile src={url} caption={description} key={i} index={i} onClick={action}/>);
 	}
 	return tiles;
 };
@@ -51,10 +52,8 @@ export class RawGallery extends React.PureComponent {
 		const tiles = generateTile(tileSources, select);
 		return (
 				<Section id="gallery">
-					<Card>
 							<UnselectedTiles tiles={tiles} selected={selected}/>
 							{selected ? <SelectedTile/> : null}
-					</Card>
 				</Section>
 	)};
 }

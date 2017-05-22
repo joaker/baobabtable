@@ -21,8 +21,8 @@ export const ImageTile = (props) => {
       }
     }}>
       <div className="image-tile-contents">
-        <img src={src}/>
-        <div className="browser-caption">{caption}</div>
+        <div className="image-wrapper"><img src={src}/></div>
+        <div><div className="browser-caption">{caption}</div></div>
       </div>
     </a>
   );
