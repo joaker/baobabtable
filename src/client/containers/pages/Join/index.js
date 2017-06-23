@@ -6,13 +6,14 @@ import './index.scss';
 import Section from 'components/Section';
 import Card from 'components/Card';
 
-const register = () => {
+const register = (e) => {
 	const {value: name} = document.getElementById('name');
 	const {value: email} = document.getElementById('email');
 	const {value: description} = document.getElementById('description');
 
 	const payload = {name, email, description};
 
+	e.preventDefault();
 
 	return fetch("/register", {
 	  method: 'POST',
@@ -21,6 +22,12 @@ const register = () => {
 	    'Content-Type': 'application/json',
 	  },
 	  body: JSON.stringify(payload),
+	}).then(() => {
+		console.log('registration complete');
+		const form = document.getElementById('registrationForm');
+		form.innerHTML = '<div className="mui--z3"><div className="mui--text-headline">We\'ll let you know, thanks.</div></div>';
+	}).catch(e => {
+		console.log(e);
 	});
 }
 
@@ -39,11 +46,11 @@ export const Join = () => (
 				</p>
 				</Card>
 				<Card className="fields">
-					<form>
+					<form id="registrationForm" action="/Submitted" method="get">
 						<div><Input id="name"  type="text" label="name" hint={hints.name} floatingLabel={true} required={true} /></div>
 						<div><Input id="email" type="email" label="email" hint={hints.email} floatingLabel={true} required={true} /></div>
 						<div><Textarea id="description" rows="8" label="introduction" hint={hints.intro} floatingLabel={true} required={true} /></div>
-						<Button type="submit" onClick={() => register()}>Apply for membership</Button>
+						<Button type="submit" onClick={(e) => register(e)}>Apply for membership</Button>
 					</form>
 				</Card>
 			</Section>
