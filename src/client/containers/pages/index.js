@@ -7,3 +7,4 @@ export * from './Gallery';
 export * from './Stuff';
 export * from './Thangs';
 export * from './Join';
+export * from './Landing';

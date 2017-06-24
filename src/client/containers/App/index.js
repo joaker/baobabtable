@@ -3,15 +3,18 @@ import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'reac
 import Nav from 'components/Nav';
 import NavMobile from 'components/Nav/Mobile';
 
-export const App = ({children}) => (
-  <div>
-    <Nav/>
-    <NavMobile/>
-    <div className='contents'>
-      <main>
-      {children}
-      </main>
+export const App = (props) => {
+  const {children} = props;
+  return (
+    <div>
+      <Nav/>
+      <NavMobile/>
+      <div className='contents'>
+        <main>
+          {children}
+        </main>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 export default App;

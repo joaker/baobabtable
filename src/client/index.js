@@ -4,6 +4,7 @@ import 'styles/theme.scss';
 import 'styles/utilities.scss';
 import 'muicss/lib/sass/mui.scss';
 import App from './containers/App';
+import Main from 'components/Main';
 import * as pages from 'pages';
 
 import {render} from 'react-dom';
@@ -26,20 +27,20 @@ const store = configureStore();
 const history = syncHistoryWithStore(unsyncedHistory, store)
 
 unsyncedHistory.listen(updateLocation(store));
-
-
 render(
 	<Provider store={store}>
 		<Router history={history}>
 	    <Route path="/" component={App}>
-				<IndexRoute component={pages.Welcome}/>
-				<Route path="/Welcome" component={pages.Welcome}/>
-				<Route path="/Intro" component={pages.Intro}/>
-				<Route path="/Gallery" component={pages.Gallery}/>
-				<Route path="/Join" component={pages.Join}/>
-				<Route path="/Submitted" component={pages.Submitted}/>
-	      <Route path="/Stuff" component={pages.Stuff}/>
-				<Route path="/Thangs" component={pages.Thangs}/>
+				<IndexRoute component={pages.Landing}/>
+				<Route path="/*" component={Main}>
+					<Route path="/Welcome" component={pages.Welcome}/>
+					<Route path="/Intro" component={pages.Intro}/>
+					<Route path="/Gallery" component={pages.Gallery}/>
+					<Route path="/Join" component={pages.Join}/>
+					<Route path="/Submitted" component={pages.Submitted}/>
+		      <Route path="/Stuff" component={pages.Stuff}/>
+					<Route path="/Thangs" component={pages.Thangs}/>
+				</Route>
 			</Route>
     </Router>
 	</Provider>,
