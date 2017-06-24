@@ -2,6 +2,7 @@ import 'styles/reset.scss';
 import 'styles/base.scss';
 import 'styles/theme.scss';
 import 'styles/utilities.scss';
+import 'muicss/lib/sass/mui.scss';
 import App from './containers/App';
 import * as pages from 'pages';
 
