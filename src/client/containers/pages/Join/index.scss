@@ -3,6 +3,10 @@
     background: transparent url(/img/toasts.jpg) no-repeat center center;
     background-size: cover;
     position: relative;
+
+    h2 {
+      color: rgba(0,0,0,0.7);
+    }
 }
 
 .fields {

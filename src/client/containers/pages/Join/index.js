@@ -40,10 +40,9 @@ const hints = {} || {
 export const Join = () => (
 			<Section id="join">
 				<Card>
-				<p>
-					To apply to join the Baobab Table Supper Club, provide your email address and a short introduction.
-					If a peanut could kill you, please mention that.  We'll wait for a peanut-free night to invite you.
-				</p>
+				<h1 className="noselect">
+					Apply to Join
+				</h1>
 				</Card>
 				<Card className="fields">
 					<form id="registrationForm" action="/Submitted" method="get">

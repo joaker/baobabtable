@@ -24,7 +24,9 @@ a {
     color:#777;
   }
 
-  &:not(:hover) {
+  &:not(:hover),
+  &.active:not(:hover),
+  &.active:hover {
     text-decoration: none;
   }
 }
