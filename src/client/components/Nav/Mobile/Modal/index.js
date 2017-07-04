@@ -8,9 +8,9 @@ import * as actions from 'actions/menu';
 export const RawModal = ({id, className, close, toggle}) => (
   <nav id={id} className={cnames("modal", className)}>
     <div className="routes" onClick={() => close()}>
-      <a href="#welcome">Welcome</a>
-      <a href="#intro">Intro</a>
-      <a href="#join">Join</a>
+      <a href="/#welcome">Welcome</a>
+      <a href="/#intro">Intro</a>
+      <a href="/#join">Join</a>
       <PageLink name="Gallery"/>
       <PageLink name="Contact"/>
       <PageLink name="@AbujaChef"/>

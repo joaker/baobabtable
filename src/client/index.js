@@ -32,7 +32,7 @@ render(
 		<Router history={history}>
 	    <Route path="/" component={App}>
 				<IndexRoute component={pages.Landing}/>
-				<Route path="/*" component={Main}>
+				<Route path="/" component={Main}>
 					<Route path="/Welcome" component={pages.Welcome}/>
 					<Route path="/Intro" component={pages.Intro}/>
 					<Route path="/Gallery" component={pages.Gallery}/>
