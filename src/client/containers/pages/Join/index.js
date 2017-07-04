@@ -41,7 +41,7 @@ export const Join = () => (
 			<Section id="join">
 				<Card>
 				<h1 className="noselect">
-					Apply to Join
+					Join the Table
 				</h1>
 				</Card>
 				<Card className="fields">
