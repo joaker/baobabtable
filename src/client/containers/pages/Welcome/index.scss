@@ -1,4 +1,4 @@
-#marquee {
+#welcome {
     // height: 452px;
     background: transparent url(/img/blue-tangerine.jpg) no-repeat center center;
     background-size: cover;
@@ -55,7 +55,7 @@
 
 
 @media screen and (max-width: 768px) {
-  #marquee {
+  #welcome {
     h1 {
       font-size: 400%;
     }

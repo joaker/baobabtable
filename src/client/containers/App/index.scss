@@ -1743,6 +1743,10 @@ $quickSpeed: .1s;
   color: #848488;
   transition: color $quickSpeed;
 
+  &:after {
+    transition: height $quickSpeed;
+  }
+
 }
 
 
@@ -1788,13 +1792,13 @@ $quickSpeed: .1s;
   background-color: #848488;
   width: 100%;
   content: " ";
-  bottom: 2px;
+  bottom: 1px;
   -webkit-backface-visibility: hidden;
   /** prevent ios flickers **/
-  -moz-transition-property: opacity, transform, background-color;
+  -moz-transition-property: opacity, transform, background-color, height;
   /*-o-transition-property: opacity, transform, background-color;*/
-  -webkit-transition-property: opacity, transform, background-color;
-  transition-property: opacity, transform, background-color;
+  -webkit-transition-property: opacity, transform, background-color, height;
+  transition-property: opacity, transform, background-color, height;
   -moz-transition-duration: 0.2s;
   /*-o-transition-duration: 0.2s;*/
   -webkit-transition-duration: 0.2s;
@@ -1808,13 +1812,24 @@ $quickSpeed: .1s;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
-.button-base:hover, a:hover, .button-base.hover, a.hover, .button-base.active, .button-base.current, a.active, a.current, {
+.button-base:hover,
+a:hover,
+.button-base.hover,
+a.hover,
+.button-base.active,
+.button-base.current,
+a.active,
+a.current, {
   color: #848488;
   color: #151517;
+  text-decoration: none;
+  cursor: pointer;
 }
 .button-base:hover:after, a:hover:after, .button-base.hover:after, a.hover:after, .button-base.active:after, .button-base.current:after, a.active:after, a.current:after, {
   background-color: #848488;
-  background-colorcolor: #151517;
+  background-color: #151517;
+  height:3px;
+
 }
 a.nav {
   text-transform: uppercase;

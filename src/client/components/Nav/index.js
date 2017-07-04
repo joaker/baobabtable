@@ -5,10 +5,10 @@ import PageLink from 'components/PageLink';
 export const Nav = ({id, className, hidden= false, fixed= true}) => (
   <nav id={id} data-view-className="views/Navigation" className={cnames("navigation", className, {fixed, hidden,})}>
     <div className="container hashRoute">
-      <PageLink name="Welcome"/>
-      <PageLink name="Intro"/>
+      <a href="#welcome">Welcome</a>
+      <a href="#intro">Intro</a>
+      <a href="#join">Join</a>
       <PageLink name="Gallery"/>
-      <PageLink name="Join"/>
       <PageLink name="Contact"/>
       <PageLink name="@AbujaChef"/>
     </div>
